@@ -1,0 +1,45 @@
+<body>
+    {{> home}}
+</body>
+
+<template name="home">
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Meteor - Cylon</h1>
+                </div>
+            </div>
+            <hr>
+        </header>
+        <div class="row">
+            {{#each leds}}
+            <div class="col-sm-3 col-xs-4">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" class="led" id="{{name}}" value="{{name}}" {{status}}> <span style="color: {{#if status}} red {{/if}}; font-weight: bold;">{{title}}</span>
+                    </label>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-4 col-xs-12">
+                <p>
+                <button class="btn btn-success btn-block on-all-led">Turn On All</button>
+                </p>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <p>
+                <button class="btn btn-success btn-block toogle-all-led">Turn Toogle All</button>
+                </p>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <p>
+                <button class="btn btn-success btn-block off-all-led">Turn Off All</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</template>
